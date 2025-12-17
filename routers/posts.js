@@ -10,27 +10,35 @@ router.get("/", (req, res) => {
 
 //SHOW
 router.get("/:id", (req, res) => {
-    let result = postList.find((post) => post.id === parseInt(req.params.id))
-    res.send(result);
+    let result = postList.find((post) => post.id === parseInt(req.params.id));
+
+    if(result === undefined)
+    {
+        res.send("Nessun post con id " + req.params.id);
+    }
+    else
+    {
+        res.send(result);
+    }
 });
 
 //STORE
-router.post("/", () => {
+router.post("/", (req, res) => {
     res.send("Creo un nuovo post");
 });
 
 //UPDATE
-router.put("/:id", () => {
+router.put("/:id", (req, res) => {
     res.send("Rimpiazzo il post");
 });
 
 //MODIFY
-router.patch("/:id", () => {
+router.patch("/:id", (req, res) => {
     res.send("Modifico il post");
 });
 
 //DESTROY
-router.get("/:id", () => {
+router.delete("/:id", (req, res) => {
     res.send("Elimino il post");
 });
 
