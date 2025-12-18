@@ -1,6 +1,7 @@
 const postList = [
     {
         id: 1,
+        slug: 'chaos-orb',
         title: "Chaos Orb",
         body: "{1}, {T}: If this artifact is on the battlefield, flip it onto the battlefield from a height of at least one foot. If this artifact turns over completely at least once during the flip, destroy all nontoken permanents it touches. Then destroy this artifact.",
         img: "/img/Chaos_Orb.jpg",

@@ -9,8 +9,14 @@ router.get("/", (req, res) => {
 });
 
 //SHOW
-router.get("/:id", (req, res) => {
+// /repos/:username/:reponame/:filename
+// /producsts/:brand/:color
+router.get("/:id", (req, res) => { // http://localhost:3000/posts/1/ciao?id=1&lol=90
     let result = postList.find((post) => post.id === parseInt(req.params.id));
+    console.log('query', req.query.id);
+    console.log('params', req.params);
+    
+    
 
     if(result === undefined)
     {
@@ -24,6 +30,8 @@ router.get("/:id", (req, res) => {
 
 //STORE
 router.post("/", (req, res) => {
+    console.log(req.body);
+    
     res.send("Creo un nuovo post");
 });
 

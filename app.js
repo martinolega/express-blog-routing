@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from "body-parser";
 import postRouter from "./routers/posts.js";
 import postList from "./data/postList.js";
 
@@ -6,6 +7,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.static("public"));
+app.use(bodyParser.json())
 
 app.use("/posts", postRouter);
 
